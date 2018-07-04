@@ -32,6 +32,23 @@ $(function() {
          * and that the URL is not empty.
          */
 
+        /*
+         * Remark: The basic code for this test was taken from the study jam
+         * with Mohamed Riaad: https://www.youtube.com/watch?v=Ut_L8YUImbw
+         * Mohamed's code helped me to grasp the basic ES6 pattern for tests.
+         * I simplified his code a bit to avoid the use of regular expressions.
+         */
+        it('URL is not empty', () => {
+            allFeeds.forEach((feed) => {
+                // Check if the URL is defined
+                expect(feed.url).toBeDefined();
+                // Make sure that the length of the URL string is > 0
+                expect(feed.url.length).not.toBe(0);
+                // When the URL contains "http", it can include "https", too
+                expect(feed.url).toMatch("http");
+            });
+        });
+
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined

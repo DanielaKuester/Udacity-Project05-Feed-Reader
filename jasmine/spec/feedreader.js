@@ -38,7 +38,7 @@ $(function() {
          * Mohamed's code helped me to grasp the basic ES6 pattern for tests.
          * I simplified his code a bit to avoid the use of regular expressions.
          */
-        it('URL is not empty', () => {
+        it('feed URL is not empty', () => {
             allFeeds.forEach((feed) => {
                 // Check if the URL is defined
                 expect(feed.url).toBeDefined();
@@ -54,6 +54,17 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('feed name is not empty', () => {
+            allFeeds.forEach((feed) => {
+                // Check if the name is defined
+                expect(feed.name).toBeDefined();
+                // Make sure that the length of the name string is > 0
+                expect(feed.name.length).not.toBe(0);
+                // Check if the feed name is a string
+                expect(feed.name).toEqual(jasmine.any(String));
+            });
+        });
+
     });
 
 

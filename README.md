@@ -5,7 +5,7 @@
 * [Project Overview](#project-overview)
 * [Instructions](#instructions)
 * [Installation](#installation)
-* [Which tests does this project contain?](#Which-tests-does-this-project-contain?)
+* [Tests in this Project](#tests-in-this-project)
 * [Credits](#credits)
 * [External Code Used in this Project](#external-code-used-in-this-project)
 * [Acknowledgements](#acknowledgements)
@@ -36,7 +36,7 @@ run the Feed Reader Testing. Jasmine is there already included and installed.
 2. Clone the repository with Git Bash: ```$ git clone https://danielakuester.github.io/Udacity-Project05-Feed-Reader/```
 and open the index.html to run the Feed Reader Tests.
 
-## Which tests does this project contain?
+## Tests in this Project
 
 1. A test that ensures that all `allFeeds` objects are defined.
 2. A test that ensures that all `allFeeds` objects have a URL defined and that the URL is not empty.

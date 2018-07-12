@@ -104,13 +104,52 @@ $(function() {
 
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', () => {
-      
+
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+				/**
+				 * @description: The beforeEach-function with the parameter done is run
+				 * before all of the asynchronous tests. It is called within the async
+				 * tests to tell the tests when they should stop. loadFeed(0) loads the
+				 * first feed. After that is done, the tests can begin. To complete this
+				 * test, I coded along with Mohamed Riaad's Study Jam:
+				 * https://www.youtube.com/watch?v=Ut_L8YUImbw
+				 * I got rid of the regular expressions and tried to simplify the code
+				 * as much as possbile.
+				 */
+				beforeEach((done) => {
+            loadFeed(0, () => {
+                done();
+            });
+        });
+
+				/**
+				 * @description Pass done as a parameter to the funciton to tell it that
+				 * it has to rely on the asynchronous testing. Call the done()-function
+				 * when the test is done.
+				 */
+        it("contain at least a single .entry element within .feed after loadFeed() is called", ((done) => {
+            let entries = document.querySelector(".feed").getElementsByClassName("entry");
+						let numberOfEntries = entries.length;
+						// Make sure that there are more than 0 entries
+            expect(numberOfEntries).not.toBe(0);
+            done();
+        }));
+
+
+        it("contain a link starting with 'http(s)://'", ((done) => {
+            let entries = document.querySelector(".feed").getElementsByClassName("entry-link");
+            for (var i = 0; i < entries.length; i++) {
+                expect(entries[i].href).toMatch('http://'|'https://');
+            }
+            done();
+        }));
+		});
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
@@ -119,6 +158,5 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-    });
 
 }());

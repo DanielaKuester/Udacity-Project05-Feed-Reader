@@ -4,7 +4,6 @@
 
 * [Project Overview](#project-overview)
 * [Instructions](#instructions)
-* [Live View](#live-view)
 * [Installation](#installation)
 * [Which tests does this project contain?](#Which-tests-does-this-project-contain?)
 * [Credits](#credits)
@@ -28,10 +27,6 @@ suite. That's where you come in."
 To run the feed reader tests, scroll down to the bottom of the page and click on
 the test that you would like to perform. You can also choose to run all tests
 at once.
-
-## Live View
-
-You can test the feed reader here: https://danielakuester.github.io/Udacity-Project05-Feed-Reader/
 
 ## Installation
 
